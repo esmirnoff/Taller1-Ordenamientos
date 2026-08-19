@@ -19,7 +19,19 @@ public static void main(String[] args) {
 }
  @Override
  public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
-  return 0;
+     int inicio = 0;
+     int fin = arrayPorExplorar.length - 1;
+  while (inicio <= fin){
+      int medio = (inicio+fin)/2;
+      if (arrayPorExplorar[medio] == elementoABuscar){
+          return medio;
+          else if (arrayPorExplorar[medio] < elementoABuscar) {
+              inicio = medio + 1;
+          }else{
+                  fin = medio-1;}
+
+      }
+  }
  }
 
  @Override
