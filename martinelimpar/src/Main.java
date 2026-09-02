@@ -26,5 +26,10 @@ public class Main {
         int[] copia = ordenado1.clone();
         int[] resultado = alg.bubbleSort(ordenado1);
         System.out.println("Ordenando " + Arrays.toString(copia) + ": resultado = " + Arrays.toString(resultado));
+
+        int[] selSort = {4,2,8,9};
+        int[] copia2 = selSort.clone();
+        int[] resultSort = alg.selectionSort(selSort);
+        System.out.println("Ordenando " + Arrays.toString(copia2) + ": resultado = " + Arrays.toString(resultSort));
     }
 }
