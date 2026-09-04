@@ -79,8 +79,8 @@ public class MisAlgoritmos implements Busquedas, Ordenamientos{
       return arrayDesordenado;
   }
   int mid = (arrayDesordenado.length / 2);
-  int left = Arrays.copyOfRange(arrayDesordenado, 0, mid);
-  int right = Arrays.copyOfRange(arrayDesordenado, mid, arrayDesordenado.length);
+  int[] left = Arrays.copyOfRange(arrayDesordenado, 0, mid);
+  int[] right = Arrays.copyOfRange(arrayDesordenado, mid, arrayDesordenado.length);
   return merge(mergeSort(left), mergeSort(right));
  }
  private int[] merge(int[] left, int[] right) {

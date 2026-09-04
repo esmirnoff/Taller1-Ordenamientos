@@ -40,6 +40,6 @@ public class Main {
         int[] merSort = {2,5,1,6,9,3};
         int[] copia4 = merSort.clone();
         int[] resMerg = alg.mergeSort(copia4);
-        System.out.println("Ordenando"+ Arrays.toString(merSort)+ ": resultado = " + Arrays.toString(resMerg));
+        System.out.println("Ordenando "+ Arrays.toString(merSort)+ ": resultado = " + Arrays.toString(resMerg));
     }
 }
