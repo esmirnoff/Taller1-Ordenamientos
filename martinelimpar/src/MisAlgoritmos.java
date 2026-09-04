@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class MisAlgoritmos implements Busquedas, Ordenamientos{
 
  @Override
@@ -58,12 +61,44 @@ public class MisAlgoritmos implements Busquedas, Ordenamientos{
 
  @Override
  public int[] insertionSort(int[] arrayDesordenado) {
-  return new int[0];
+  for (int i = 1; i < arrayDesordenado.length; i++) {
+      int key = arrayDesordenado[i];
+      int j = i - 1;
+      while (j >= 0 && arrayDesordenado[j] > key) {
+          arrayDesordenado[j + 1] = arrayDesordenado[j];
+          j--;
+      }
+      arrayDesordenado[j + 1] = key;
+  }
+  return arrayDesordenado;
  }
 
  @Override
  public int[] mergeSort(int[] arrayDesordenado) {
-  return new int[0];
+  if  (arrayDesordenado.length <= 1 ) {
+      return arrayDesordenado;
+  }
+  int mid = (arrayDesordenado.length / 2);
+  int left = Arrays.copyOfRange(arrayDesordenado, 0, mid);
+  int right = Arrays.copyOfRange(arrayDesordenado, mid, arrayDesordenado.length);
+  return merge(mergeSort(left), mergeSort(right));
+ }
+ private int[] merge(int[] left, int[] right) {
+     int[] resultado = new int[left.length + right.length];
+     int i = 0, j = 0, k = 0;
+     while (i < left.length && j < right.length) {
+         if (left[i] <= right[j]) {
+             resultado[k++] = left[i++];
+         }else{
+             resultado[k++] = right[j++];
+     }
+ }
+     while (i < left.length) {
+     resultado[k++] = left[i++];}
+     while (j < right.length) {
+         resultado[k++] = right[j++];
+     }
+     return resultado;
  }
 
  @Override

@@ -31,5 +31,15 @@ public class Main {
         int[] copia2 = selSort.clone();
         int[] resultSort = alg.selectionSort(selSort);
         System.out.println("Ordenando " + Arrays.toString(copia2) + ": resultado = " + Arrays.toString(resultSort));
+
+        int[] insSort = {2,5,1,6,9,3};
+        int[] copia3 = insSort.clone();
+        int[] resultInsert = alg.insertionSort(copia3);
+        System.out.println("Ordenando " + Arrays.toString(insSort) + ": resultado = " + Arrays.toString(resultInsert));
+
+        int[] merSort = {2,5,1,6,9,3};
+        int[] copia4 = merSort.clone();
+        int[] resMerg = alg.mergeSort(copia4);
+        System.out.println("Ordenando"+ Arrays.toString(merSort)+ ": resultado = " + Arrays.toString(resMerg));
     }
 }
